@@ -1,0 +1,675 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"incomming"
+			],
+			[
+				"C",
+				"CellClass"
+			],
+			[
+				"ce",
+				"cell_size"
+			],
+			[
+				"get",
+				"getStat"
+			],
+			[
+				"_gr",
+				"_grid_draw_iterator"
+			],
+			[
+				"gr",
+				"grid_width"
+			],
+			[
+				"gri",
+				"grid_array"
+			],
+			[
+				"Cell",
+				"CellState"
+			],
+			[
+				"E",
+				"EMITTER"
+			],
+			[
+				"Ce",
+				"CellClass"
+			],
+			[
+				"is",
+				"isKeyDown"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"cu",
+				"cur_stat"
+			],
+			[
+				"ra",
+				"ray_b"
+			],
+			[
+				"r",
+				"ray_r"
+			],
+			[
+				"getReceive",
+				"getReceived"
+			],
+			[
+				"cell",
+				"cell_size"
+			],
+			[
+				"cur_",
+				"cur_y"
+			],
+			[
+				"grid",
+				"grid_array"
+			],
+			[
+				"st",
+				"static"
+			],
+			[
+				"lo",
+				"locked"
+			],
+			[
+				"cel",
+				"cell_size"
+			],
+			[
+				"cell_",
+				"cell_offst_y"
+			],
+			[
+				"getD",
+				"getDx"
+			],
+			[
+				"cur",
+				"cur_stat"
+			],
+			[
+				"ray_",
+				"ray_b"
+			],
+			[
+				"ray",
+				"ray_r"
+			],
+			[
+				"_di",
+				"_dir_dy"
+			],
+			[
+				"di",
+				"dir_id"
+			],
+			[
+				"_",
+				"_dir_dx"
+			],
+			[
+				"DIR_RI",
+				"DIR_RIGHT_DOWN"
+			],
+			[
+				"DIR_LE",
+				"DIR_LEFT_DOWN"
+			],
+			[
+				"grid_",
+				"grid_width"
+			],
+			[
+				"Di",
+				"DIR_LEFT"
+			],
+			[
+				"DIR",
+				"DIR_RIGHT"
+			],
+			[
+				"DIR_",
+				"DIR_LEFT"
+			],
+			[
+				"sel_cell_",
+				"sel_cell_y"
+			],
+			[
+				"dr",
+				"draw_cell_size"
+			],
+			[
+				"se",
+				"sel_cell_x"
+			],
+			[
+				"sel",
+				"sel_cell_y"
+			],
+			[
+				"s",
+				"sel_cell_x"
+			],
+			[
+				"ck",
+				"ck_mirror_update"
+			],
+			[
+				"ck_e",
+				"ck_emitter_draw"
+			],
+			[
+				"ck_",
+				"ck_emitter_update"
+			],
+			[
+				"cc_",
+				"cc_get_received"
+			],
+			[
+				"DIR_R",
+				"DIR_RIGHT"
+			],
+			[
+				"_dir_",
+				"_dir_dx"
+			],
+			[
+				"t",
+				"type"
+			],
+			[
+				"dir",
+				"direction"
+			],
+			[
+				"RA",
+				"RAY_RED"
+			],
+			[
+				"up",
+				"update_interval"
+			],
+			[
+				"MyFo",
+				"MyFontSize"
+			],
+			[
+				"ca",
+				"ca	catch"
+			],
+			[
+				"pr",
+				"protected"
+			],
+			[
+				"mid",
+				"midy"
+			],
+			[
+				"M",
+				"MyY"
+			],
+			[
+				"My",
+				"MyX"
+			],
+			[
+				"MyAn",
+				"MyAnimationStatus"
+			],
+			[
+				"GL",
+				"GL11Drawer"
+			],
+			[
+				"bi",
+				"bindInternal"
+			],
+			[
+				"In",
+				"InputEvent"
+			],
+			[
+				"h",
+				"handleEvent"
+			],
+			[
+				"MyM",
+				"MyMinHeight"
+			],
+			[
+				"lwj",
+				"lwjglui"
+			],
+			[
+				"end",
+				"endBatch"
+			],
+			[
+				"Lis",
+				"ListGeometryBatch"
+			],
+			[
+				"HA",
+				"HANCHOR_BOTH"
+			],
+			[
+				"poll",
+				"pollMouse"
+			],
+			[
+				"JSON",
+				"JSONUtil"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/Game.java",
+			"settings":
+			{
+				"buffer_size": 3447,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Grid.java",
+			"settings":
+			{
+				"buffer_size": 7723,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/CellClass.java",
+			"settings":
+			{
+				"buffer_size": 3439,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Ray.java",
+			"settings":
+			{
+				"buffer_size": 1174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Direction.java",
+			"settings":
+			{
+				"buffer_size": 1454,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Java",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 292.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/a_bond/java-code/lwjgl-1-st-app/MyApp.java",
+		"/home/a_bond/java-code/raypuzzle/build",
+		"/home/a_bond/java-code/raypuzzle/.build",
+		"/home/a_bond/java-code/raypuzzle/run",
+		"/home/a_bond/java-code/lwjgl-1-st-app/build",
+		"/home/a_bond/java-code/lwjgl-1-st-app/run",
+		"/home/a_bond/code/sdl2/1 - raypuzzle/cells.h",
+		"/home/a_bond/code/sdl2/1 - raypuzzle/cells-classes.h",
+		"/home/a_bond/code/sdl2/1 - raypuzzle/main.cpp",
+		"/home/a_bond/code/sdl2/0/main.cpp",
+		"/home/a_bond/code/sdl2/1 - raypuzzle/ceils.h",
+		"/home/a_bond/code/sdl2/1 - raypuzzle/br",
+		"/home/a_bond/Загрузки/Voprosy_k_zachetu (1).txt",
+		"/home/a_bond/Загрузки/Voprosy_k_zachetu.txt",
+		"/home/a_bond/code/maxima-5.33.0/src/comm2.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/comm.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/clmacs.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/simp.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/ratout.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/nisimp.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/rat3e.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/limit.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/rat3d.lisp",
+		"/home/a_bond/code/lisp/simp.lsp",
+		"/home/a_bond/code/maxima-5.33.0/src/asum.lisp",
+		"/home/a_bond/code/maxima-5.33.0/src/utils.lisp",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/TestApp.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/Screen.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/Application.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/items/Console.java",
+		"/home/a_bond/java-code/lwjglui/build-files",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/Item.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/items/Button.java",
+		"/home/a_bond/java-code/lwjglui/REPORT",
+		"/home/a_bond/java-code/lwjglui/lwjglui.sublime-project",
+		"/dev/urandom",
+		"/dev/tty40",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/InputEvent.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/gl/text/Font.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/gl/text/SlickFont.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/gl/text/Line.java",
+		"/home/a_bond/java-code/lwjglui/.gitignore",
+		"/home/a_bond/java-code/lwjglui/config.conf",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/gl/Drawer.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/items/Clock.java",
+		"/home/a_bond/java-code/lwjglui/run",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/gl/GeometryBatch.java",
+		"/home/a_bond/java-code/lwjglui/lwjglui.sublime-workspace",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/gl/Texture.java",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/items/GroupBox.java",
+		"/home/a_bond/java-code/lwjglui/.build-args",
+		"/home/a_bond/java-code/lwjglui/src/lwjglui/JSONUtil.java",
+		"/home/a_bond/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/a_bond/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/a_bond/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/a_bond/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/a_bond/java-code/lwjglui/build~"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/a_bond/code/maxima-5.33.0/src",
+			"/home/a_bond/java-code/lwjglui/src/lwjglui",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" $ratsimp ",
+			"$ratsimp",
+			" diff%deriv",
+			" %integr",
+			" %sum ",
+			" diffsumprod ",
+			"diffsumprod",
+			"diffexpt",
+			" %derivative ",
+			"%derivative",
+			"diff%deriv",
+			" putprop",
+			"putprop",
+			"$diff",
+			"derivative",
+			" diff ",
+			"diff ",
+			"PATTERN:",
+			"PATTERN",
+			"PATTERN:\n",
+			");\n",
+			"Height",
+			"PATTERN:",
+			"builder",
+			"glBegin( GL_LINE_STRIP );\n		glColor3f( 0.0f, 0.8f, 0.2f );\n		glVertex2i( MyRect.getX(), MyRect.getY() );\n		glVertex2i( MyRect.getX()+MyRect.getWidth(), MyRect.getY() );\n		glVertex2i( MyRect.getX()+MyRect.getWidth(), MyRect.getY()+MyRect.getHeight() );\n		glVertex2i( MyRect.getX(), MyRect.getY()+MyRect.getHeight() );\n		glVertex2i( MyRect.getX(), MyRect.getY() );\n		glEnd();",
+			"PATTERN:"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Width",
+			"drw"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/Game.java",
+					"settings":
+					{
+						"buffer_size": 3447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3378,
+								3378
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1734.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Grid.java",
+					"settings":
+					{
+						"buffer_size": 7723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2065,
+								2065
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/CellClass.java",
+					"settings":
+					{
+						"buffer_size": 3439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2261,
+								2261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 867.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Ray.java",
+					"settings":
+					{
+						"buffer_size": 1174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1149,
+								1149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 867.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Direction.java",
+					"settings":
+					{
+						"buffer_size": 1454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1124,
+								1124
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 314.0
+	},
+	"output.find_results":
+	{
+		"height": 112.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true
+}

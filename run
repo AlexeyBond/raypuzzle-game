@@ -1,0 +1,2 @@
+#!/bin/sh
+java -cp .classes:jar/lwjgl.jar:jar/lwjgl_util.jar -Djava.library.path=nat Game

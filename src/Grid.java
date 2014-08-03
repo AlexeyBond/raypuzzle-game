@@ -238,11 +238,11 @@ public class Grid
 			int a = (w-grid_gap*2) / grid_width;
 			int b = (h-grid_gap*2) / grid_height;
 			if( a < b ) {
-				cell_size = a;
+				cell_size = ((a&1) != 0)?a:(a-1);
 				cell_offst_x = grid_gap;
 				cell_offst_y = (h-cell_size*grid_height)/2;
 			} else {
-				cell_size = b;
+				cell_size = ((b&1) != 0)?b:(b-1);
 				cell_offst_y = grid_gap;
 				cell_offst_x = (w-cell_size*grid_width)/2;
 			};

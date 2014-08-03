@@ -33,6 +33,12 @@ public enum CellClass
 				_dest.set( r, g, b );
 			};
 		};
+		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
+			glBegin( GL_TRIANGLE_FAN );
+			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
+				emitter_vertices, iter.getStat().dir, size>>3 );
+			glEnd( );
+		};
 	},
 	EMITTER_M {
 		public void update( Grid.CellIterator iter ) {
@@ -46,6 +52,12 @@ public enum CellClass
 				_dest.set( r, g, b );
 			};
 		};
+		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
+			glBegin( GL_TRIANGLE_FAN );
+			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
+				emitter_vertices, iter.getStat().dir, size>>3 );
+			glEnd( );
+		};
 	},
 	PRISM {
 		public void update( Grid.CellIterator iter ) {
@@ -54,6 +66,9 @@ public enum CellClass
 			Ray dest_b = iter.getDestination( iter.getStat().dir.rotate(+1) );
 			Ray dest_a = iter.getDestination( iter.getStat().dir.reverse() );
 
+			Ray in_r = iter.getStat().getReceived( iter.getStat().dir.rotate(-1) );
+			Ray in_g = iter.getStat().getReceived( iter.getStat().dir );
+			Ray in_b = iter.getStat().getReceived( iter.getStat().dir.rotate(+1) );
 			Ray in_a = iter.getStat().getReceived( iter.getStat().dir.reverse() );
 
 			in_a.fade( );
@@ -61,6 +76,20 @@ public enum CellClass
 			dest_r.set( in_a.getR(), 0, 0 );
 			dest_g.set( 0, in_a.getG(), 0 );
 			dest_b.set( 0, 0, in_a.getB() );
+
+			in_b.fade( );
+			in_g.fade( );
+			in_r.fade( );
+
+			dest_a.set( in_b );
+			dest_a.add( in_g );
+			dest_a.add( in_r );
+		};
+		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
+			glBegin( GL_TRIANGLES );
+			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
+				prism_vertices, iter.getStat().dir, size>>3 );
+			glEnd( );
 		};
 	},
 	RANDOMIZER {
@@ -102,6 +131,18 @@ public enum CellClass
 	private static final int[] emit_pattern =
 		{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
 		  15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+
+	// Vertex arrays .. //
+	// for PRISM
+	private static int[][] prism_vertices = {
+		{3,0,0,255,0},{-1,4,255,0,0},{-1,0,255,255,255},
+		{-1,-4,0,0,255},{3,0,0,255,0},{-1,0,255,255,255}
+	};
+
+	// for EMITTER
+	private static int[][] emitter_vertices = {
+		{2,0,255,255,255},{0,2},{-2,2},{-2,-2},{0,-2}
+	};
 
 	public void		update( Grid.CellIterator iter ) {
 

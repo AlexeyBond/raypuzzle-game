@@ -52,6 +52,13 @@ public class Ray
 		ray_b = ray.getB( );
 	};
 
+	public void		add( Ray ray ) {
+		ray_r += ray.getR();
+		ray_g += ray.getG();
+		ray_b += ray.getB();
+		_validate( );
+	};
+
 	public void		reset( ) {
 		ray_r = ray_g = ray_b = 0;
 	};

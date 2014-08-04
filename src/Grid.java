@@ -10,10 +10,10 @@ public class Grid
 {
 	public class CellState
 	{
-		public CellClass	type;
-		public Direction	dir;
-		public Ray[][]		received;
-		public boolean		locked;
+		private CellClass	type;
+		private Direction	dir;
+		private Ray[][]		received;
+		private boolean		locked;
 
 		public CellState( ) {
 			type = CellClass.EMPTY;
@@ -43,6 +43,34 @@ public class Grid
 
 		public Ray		getReceived( Direction dir ) {
 			return getCurReceived()[dir.getId()];
+		};
+
+		public CellClass	getType( ) {
+			return type;
+		};
+
+		public void		setType( CellClass newType ) {
+			type = newType;
+		};
+
+		public void		lock( boolean b ) {
+			locked = b;
+		};
+
+		public boolean	isLocked( ) {
+			return locked;
+		};
+
+		public Direction	getDirection( ) {
+			return dir;
+		};
+
+		public void			setDirection( Direction ndir ) {
+			dir = ndir;
+		};
+
+		public void			rotate( int n ) {
+			setDirection( getDirection( ).rotate( n ) );
 		};
 	};
 
@@ -87,18 +115,18 @@ public class Grid
 		public boolean		insert( CellClass cc ) {
 			if( cur_stat == null )
 				return false;
-			if( cur_stat.locked )
+			if( cur_stat.isLocked() )
 				return false;
-			cur_stat.type = cc;
+			cur_stat.setType( cc );
 			return true;
 		};
 
 		public boolean		rotateCell( int num ) {
 			if( cur_stat == null )
 				return false;
-			if( cur_stat.locked )
+			if( cur_stat.isLocked() )
 				return false;
-			cur_stat.dir = cur_stat.dir.rotate( num );
+			cur_stat.rotate( num );
 			return true;
 		};
 
@@ -180,20 +208,20 @@ public class Grid
 		for( int i = 0; i < grid_width; ++i ) {
 			CellState cs;
 			cs = grid_array[i];
-			cs.type = CellClass.WALL;
-			cs.locked = true;
+			cs.setType( CellClass.WALL );
+			cs.lock( true );
 			cs = grid_array[i+grid_width*(grid_height-1)];
-			cs.type = CellClass.WALL;
-			cs.locked = true;
+			cs.setType( CellClass.WALL );
+			cs.lock( true );
 		};
 		for( int i = 0; i < grid_height; ++i ) {
 			CellState cs;
 			cs = grid_array[i*grid_width];
-			cs.type = CellClass.WALL;
-			cs.locked = true;
+			cs.setType( CellClass.WALL );
+			cs.lock( true );
 			cs = grid_array[(i+1)*grid_width - 1];
-			cs.type = CellClass.WALL;
-			cs.locked = true;
+			cs.setType( CellClass.WALL );
+			cs.lock( true );
 		};
 
 		_grid_selection_iterator.goTo( 1, 1 );
@@ -218,7 +246,7 @@ public class Grid
 		_grid_update_iterator.reset( );
 		do {
 			// Call update method //
-			_grid_update_iterator.getStat().type.update( _grid_update_iterator );
+			_grid_update_iterator.getStat().getType().update( _grid_update_iterator );
 			// Clear received rays for next frame //
 			for( Ray r : _grid_update_iterator.getStat().getCurReceived() )
 				if( r != null )
@@ -256,7 +284,7 @@ public class Grid
 					int _y = cell_offst_y + cell_size * iy;
 					{
 						CellState cs = grid_array[ix+grid_width*iy];
-						if( cs.locked ) {
+						if( cs.isLocked() ) {
 							glBegin( GL_QUADS );
 							glColor3ub( (byte)10, (byte)10, (byte)10 );
 						} else {
@@ -298,7 +326,7 @@ public class Grid
 			do {
 				int _x = cell_offst_x + cell_size * _grid_draw_iterator.getX();
 				int _y = cell_offst_y + cell_size * _grid_draw_iterator.getY();
-				_grid_draw_iterator.getStat().type.draw( _grid_draw_iterator, _x, _y, cell_size );
+				_grid_draw_iterator.getStat().getType().draw( _grid_draw_iterator, _x, _y, cell_size );
 			} while( _grid_draw_iterator.next( ) );
 		};
 		{

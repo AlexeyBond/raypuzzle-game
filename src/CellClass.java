@@ -20,8 +20,8 @@ public enum CellClass
 	},
 	EMITTER_P {
 		public void update( Grid.CellIterator iter ) {
-			Ray _dest = iter.getDestination( iter.getStat().dir );
-			Ray incomming = iter.getStat().getReceived( iter.getStat().dir.reverse() );
+			Ray _dest = iter.getDestination( iter.getStat().getDirection() );
+			Ray incomming = iter.getStat().getReceived( iter.getStat().getDirection().reverse() );
 			if( _dest != null ) {
 				int tick = (int)iter.getGridTick( );
 				int r = emit_pattern[tick%30]
@@ -36,14 +36,14 @@ public enum CellClass
 		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
 			glBegin( GL_TRIANGLE_FAN );
 			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
-				emitter_vertices, iter.getStat().dir, size>>3 );
+				emitter_vertices, iter.getStat().getDirection(), size>>3 );
 			glEnd( );
 		};
 	},
 	EMITTER_M {
 		public void update( Grid.CellIterator iter ) {
-			Ray _dest = iter.getDestination( iter.getStat().dir );
-			Ray incomming = iter.getStat().getReceived( iter.getStat().dir.reverse() );
+			Ray _dest = iter.getDestination( iter.getStat().getDirection() );
+			Ray incomming = iter.getStat().getReceived( iter.getStat().getDirection().reverse() );
 			if( _dest != null ) {
 				int tick = (int)iter.getGridTick( );
 				int r = Ray.ray_max - incomming.getR();
@@ -55,21 +55,21 @@ public enum CellClass
 		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
 			glBegin( GL_TRIANGLE_FAN );
 			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
-				emitter_vertices, iter.getStat().dir, size>>3 );
+				emitter_vertices, iter.getStat().getDirection(), size>>3 );
 			glEnd( );
 		};
 	},
 	PRISM {
 		public void update( Grid.CellIterator iter ) {
-			Ray dest_r = iter.getDestination( iter.getStat().dir.rotate(-1) );
-			Ray dest_g = iter.getDestination( iter.getStat().dir );
-			Ray dest_b = iter.getDestination( iter.getStat().dir.rotate(+1) );
-			Ray dest_a = iter.getDestination( iter.getStat().dir.reverse() );
+			Ray dest_r = iter.getDestination( iter.getStat().getDirection().rotate(-1) );
+			Ray dest_g = iter.getDestination( iter.getStat().getDirection() );
+			Ray dest_b = iter.getDestination( iter.getStat().getDirection().rotate(+1) );
+			Ray dest_a = iter.getDestination( iter.getStat().getDirection().reverse() );
 
-			Ray in_r = iter.getStat().getReceived( iter.getStat().dir.rotate(-1) );
-			Ray in_g = iter.getStat().getReceived( iter.getStat().dir );
-			Ray in_b = iter.getStat().getReceived( iter.getStat().dir.rotate(+1) );
-			Ray in_a = iter.getStat().getReceived( iter.getStat().dir.reverse() );
+			Ray in_r = iter.getStat().getReceived( iter.getStat().getDirection().rotate(-1) );
+			Ray in_g = iter.getStat().getReceived( iter.getStat().getDirection() );
+			Ray in_b = iter.getStat().getReceived( iter.getStat().getDirection().rotate(+1) );
+			Ray in_a = iter.getStat().getReceived( iter.getStat().getDirection().reverse() );
 
 			in_a.fade( );
 
@@ -88,7 +88,7 @@ public enum CellClass
 		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
 			glBegin( GL_TRIANGLES );
 			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
-				prism_vertices, iter.getStat().dir, size>>3 );
+				prism_vertices, iter.getStat().getDirection(), size>>3 );
 			glEnd( );
 		};
 	},

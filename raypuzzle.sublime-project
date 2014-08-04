@@ -2,7 +2,22 @@
 	"folders":
 	[
 		{
-			"path": "/home/a_bond/java-code/raypuzzle"
+			"path": ".",
+			"folder_exclude_patterns":[".classes", "nat", "jar"]
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name"			: "Build",
+			"cmd"			: ["sh","build"],
+			"working_dir"	: "$project_path",
+			"variants"		:[
+				{
+					"name"		: "Run",
+					"cmd"		: ["sh", "run"]
+				}
+			]
 		}
 	]
 }

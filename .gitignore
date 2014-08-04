@@ -2,3 +2,4 @@
 jar/**
 nat/**
 *.*~
+*.sublime-workspace

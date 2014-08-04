@@ -92,6 +92,42 @@ public enum CellClass
 			glEnd( );
 		};
 	},
+	MIRROR {
+		public void update( Grid.CellIterator iter ) {
+			Grid.CellState stat = iter.getStat( );
+			Direction dir = stat.getDirection( );
+			{
+				Ray r = stat.getReceived( dir );
+				r.fade( );
+				iter.send( dir, r );
+				r = stat.getReceived( dir.reverse( ) );
+				r.fade( );
+				iter.send( dir.reverse( ), r );
+			};
+			{
+				Ray r = stat.getReceived( dir.rotate( -1 ) );
+				r.fade( );
+				iter.send( dir.rotate(+1), r );
+				r = stat.getReceived( dir.rotate(+1) );
+				r.fade( );
+				iter.send( dir.rotate(-1), r );
+			};
+			{
+				Ray r = stat.getReceived( dir.reverse().rotate( -1 ) );
+				r.fade( );
+				iter.send( dir.reverse().rotate(+1), r );
+				r = stat.getReceived( dir.reverse().rotate(+1) );
+				r.fade( );
+				iter.send( dir.reverse().rotate(-1), r );
+			};
+		};
+		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
+			glBegin( GL_LINES );
+			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
+				mirror_vertices, iter.getStat().getDirection(), size>>3 );
+			glEnd( );
+		};
+	},
 	RANDOMIZER {
 		public void update( Grid.CellIterator iter ) {
 			int turn = (int)(Math.random()*(Direction.num_directions*100));
@@ -142,6 +178,11 @@ public enum CellClass
 	// for EMITTER
 	private static int[][] emitter_vertices = {
 		{2,0,255,255,255},{0,2},{-2,2},{-2,-2},{0,-2}
+	};
+
+	// for MIRROR
+	private static int[][] mirror_vertices = {
+		{0,-3,255,255,255}, {0,3}
 	};
 
 	public void		update( Grid.CellIterator iter ) {

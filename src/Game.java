@@ -135,6 +135,9 @@ public class Game
 					case Keyboard.KEY_X:
 						myGrid.getSelectionIterator().insert( CellClass.RANDOMIZER );
 						break;
+					case Keyboard.KEY_M:
+						myGrid.getSelectionIterator().insert( CellClass.MIRROR );
+						break;
 					default:
 						break;
 				};

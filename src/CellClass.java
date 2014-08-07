@@ -170,18 +170,18 @@ public enum CellClass
 
 	// Vertex arrays .. //
 	// for PRISM
-	private static int[][] prism_vertices = {
+	private static final int[][] prism_vertices = {
 		{3,0,0,255,0},{-1,4,255,0,0},{-1,0,255,255,255},
 		{-1,-4,0,0,255},{3,0,0,255,0},{-1,0,255,255,255}
 	};
 
 	// for EMITTER
-	private static int[][] emitter_vertices = {
+	private static final int[][] emitter_vertices = {
 		{2,0,255,255,255},{0,2},{-2,2},{-2,-2},{0,-2}
 	};
 
 	// for MIRROR
-	private static int[][] mirror_vertices = {
+	private static final int[][] mirror_vertices = {
 		{0,-3,255,255,255}, {0,3}
 	};
 

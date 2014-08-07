@@ -13,7 +13,8 @@ public class Game
 {
 	protected static boolean	isRunning = true;
 
-	protected static Grid		myGrid;
+	protected static Grid					myGrid;
+	protected static Grid.DefaultRenderer	myGridRenderer = null;
 
 	// App. entry point //
 	public static void main(String[] args)
@@ -65,6 +66,9 @@ public class Game
 		glOrtho( 0.0, w, h, 0.0, -1.0, 1.0 );
 		glMatrixMode( GL_MODELVIEW );
 		glViewport( 0, 0, w, h );
+
+		if( myGridRenderer != null )
+			myGridRenderer.setViewport( 0, 0, Display.getWidth(), Display.getHeight() );
 	};
 
 	private static void init( ) {
@@ -74,6 +78,15 @@ public class Game
 		// Create grid //
 		myGrid = new Grid( 20, 20 );
 
+		// And renderer //
+		try {
+			myGridRenderer = new Grid.DefaultRenderer( myGrid );
+		} catch( Exception e ) {
+			System.out.println( "Unexpected exception while creating a grid renderer." );
+		};
+		myGridRenderer.init( );
+		myGridRenderer.setViewport( 0, 0, Display.getWidth(), Display.getHeight() );
+
 		// And test objects //
 		Grid.CellIterator cit = myGrid.makeIterator( );
 		cit.goTo( 1, 17 );
@@ -82,7 +95,8 @@ public class Game
 
 	private static void draw( ) {
 		glClear( GL_COLOR_BUFFER_BIT );
-		myGrid.draw( 0,0, Display.getWidth(), Display.getHeight() );
+		//myGrid.draw( 0,0, Display.getWidth(), Display.getHeight() );
+		myGridRenderer.draw( );
 	};
 
 	private static void update( ) {

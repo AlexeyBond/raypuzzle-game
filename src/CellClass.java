@@ -150,6 +150,40 @@ public enum CellClass
 			glEnd( );
 		};
 	},
+	GATE {
+		public void update( Grid.CellIterator iter ) {
+			Grid.CellState stat	= iter.getStat( );
+			boolean i_st	= stat.getIntState( ) != 0;
+			boolean n_st	= !(stat.getReceived( stat.getDirection( ).reverse( ) ).isEmpty( ));
+			if( i_st != n_st ) {
+				stat.setIntState( n_st?1:0 );
+				stat.handleViewChange( );
+			};
+			if( n_st ) {
+				// Active gate state
+				reflectRaysRelative( iter, -2, 0, true );
+				reflectRaysRelative( iter, -1, -1, true );
+				reflectRaysRelative( iter, 3, 3, true );
+			} else {
+				// Inactive gate state
+				reflectRaysRelative( iter, -1, 1, true );
+				reflectRaysRelative( iter, -3, 3, true );
+				reflectRaysRelative( iter, 0, 0, true );
+			};
+		};
+		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
+			int[][] gate_key_vertices = (iter.getStat().getIntState() != 0)?
+					(gate_active_vertices):(gate_inactive_vertices);
+			glBegin( GL_LINES );
+			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
+				gate_key_vertices, iter.getStat().getDirection(), size>>3 );
+			glEnd( );
+			glBegin( GL_QUADS );
+			DrawingUtils.drawVertices( x + (size>>1) + 1, y + (size>>1) + 1,
+				gate_common_vertices, iter.getStat().getDirection(), size>>3 );
+			glEnd( );
+		};
+	},
 	WALL {
 		public void		draw( Grid.CellIterator iter, int x, int y, int size ) {
 			int offst = (size>>2);
@@ -185,6 +219,33 @@ public enum CellClass
 		{0,-3,255,255,255}, {0,3}
 	};
 
+	// for GATE
+	private static final int[][] gate_inactive_vertices = {
+		{0,-2,255,255,255},{0,2}
+	};
+	private static final int[][] gate_active_vertices = {
+		{-2,2,255,255,255},{2,-2}
+	};
+	private static final int[][] gate_common_vertices = {
+		{-3,0},{-2,1},{-1,0},{-2,-1}
+	};
+
+	//  //
+	private static void	reflectRaysRelative( Grid.CellIterator iter, int _dira, int _dirb, boolean fade ) {
+		Grid.CellState stat = iter.getStat( );
+		Direction dira = stat.getDirection().rotate( _dira );
+		Direction dirb = stat.getDirection().rotate( _dirb );
+		Ray recva = stat.getReceived( dira );
+		Ray recvb = stat.getReceived( dirb );
+		if( fade ) {
+			recva.fade( );
+			recvb.fade( );
+		};
+		iter.send( dirb, recva );
+		iter.send( dira, recvb );
+	};
+
+	//  //
 	public void		update( Grid.CellIterator iter ) {
 
 	};

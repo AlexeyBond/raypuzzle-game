@@ -152,6 +152,9 @@ public class Game
 					case Keyboard.KEY_M:
 						myGrid.getSelectionIterator().insert( CellClass.MIRROR );
 						break;
+					case Keyboard.KEY_G:
+						myGrid.getSelectionIterator().insert( CellClass.GATE );
+						break;
 					default:
 						break;
 				};

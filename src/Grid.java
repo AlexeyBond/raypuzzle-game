@@ -16,11 +16,15 @@ public class Grid
 		private Direction	dir;
 		private Ray[][]		received;
 		private boolean		locked;
+		private long		internal_state;
 
 		public CellState( ) {
-			type = CellClass.EMPTY;
-			dir = Direction.DIR_UP;
-			locked = false;
+			type = CellClass.EMPTY;	// Grid is filled by empty cells
+			dir = Direction.DIR_UP;	// Cells are directed up by default
+			locked = false;			// Cells are not locked
+			internal_state = 0;		// Reset cell internal state
+
+			// Initialize received rays array //
 			received = new Ray[2][Direction.num_directions];
 			for( int i = 0; i < 2; ++i )
 				for( int j = 0; j < Direction.num_directions; ++j )
@@ -47,6 +51,11 @@ public class Grid
 			return getCurReceived()[dir.getId()];
 		};
 
+		public void		handleViewChange( ) {
+			if( grid_renderer != null )
+				grid_renderer.onCellChange( );
+		};
+
 		public CellClass	getType( ) {
 			return type;
 		};
@@ -54,8 +63,7 @@ public class Grid
 		public void		setType( CellClass newType ) {
 			if( type != newType ) {
 				type = newType;
-				if( grid_renderer != null )
-					grid_renderer.onCellChange( );
+				handleViewChange( );
 			};
 		};
 
@@ -74,13 +82,20 @@ public class Grid
 		public void			setDirection( Direction ndir ) {
 			if( ndir != dir ) {
 				dir = ndir;
-				if( grid_renderer != null )
-					grid_renderer.onCellChange( );
+				handleViewChange( );
 			};
 		};
 
 		public void			rotate( int n ) {
 			setDirection( getDirection( ).rotate( n ) );
+		};
+
+		public long			getIntState( ) {
+			return internal_state;
+		};
+
+		public void			setIntState( long stt ) {
+			internal_state = stt;
 		};
 	};
 
